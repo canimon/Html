@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  let y = document.forms["myForm"]["birthday"].value;
+  let z = document.forms["myForm"]["tenmark"].value;
+  let p = document.forms["myForm"]["twelvemark"].value;
+  let q = document.forms["myForm"]["cmark"].value;
+  let r = document.forms["myForm"]["collage"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    
+  }
+ else if (y ==""){
+    alert("DOB must be filled ");
+}
+  else if (z ==""){
+    alert("10th mark must be filled ");
+}
+  else if (p ==""){
+    alert("12th must be filled ");
+}
+  else if (q ==""){
+    alert("UG CGPA must be filled ");
+}
+   else if (r ==""){
+    alert("Collage must be filled ");
+}
+}
+function CheckPassword(inputtxt) 
+{ 
+var password=  /^[A-Za-z]\w{7,14}$/;
+if(inputtxt.value.match(password)) 
+{ 
+alert('Correct, try another...')
+return true;
+}
+else
+{ 
+alert('Wrong...!')
+return false;
+}
+}
+$(document).ready(function(){
+    $('input').focus(function(){
+        $(this).parent().css('border','1px solid #23c0f5');
+    })
+  });
+
+  $(document).ready(function(){
+    $('input').blur(function(){
+        $(this).parent().css('border','none');
+    })
+  });
+</script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+#birthday,#email,#password {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="john@doe.com">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
+   <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday">
+      <label for="age">AGE</label>
+     <input type="text" id="age" name="AGe" placeholder="age.....">
+     <label for="lname">10th Mark</label>
+     <input type="text" id="tenmark" name="firstname" placeholder=".....">
+     <label for="lname">SSLC SCHOOL</label>
+     <input type="text" id="twelvemark" name="firstname" placeholder=".....">
+     <label for="12thmark">12th Mark</label>
+     <input  type="text" id="mark" name="tmark"  placeholder=".....">
+     <label for="scl">HSC SCHOOL</label>
+    <input  type="text" id="scl" name="school"  placeholder=".....">
+    <label for="ugmark">UG CGPA</label>
+    <input  type="text" id="cmark" name="mark"  placeholder=".....">
+     <label for="collage">COLLAGE</label>
+     <input  type="text" id="collage" name="mark"  placeholder=".....">
+      <label for="course">DEGREE</label>
+      <select id="degree" name="degree">
+      <option value="be">BE</option>
+      <option value="bcom">BCOM</option>
+      <option value="bsc">BSC</option>
+    </select>
+    <label for="course">STREAM</label>
+     <select id="degree" name="degree">
+      <option value="csc">CSC</option>
+      <option value="bcom">ECE</option>
+      <option value="bsc">EEE</option>
+    </select>
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
